@@ -33,7 +33,7 @@ const Dashboard = () => {
   return (
     <div className="container position-relative p-4">
       <div className="text-center">
-        <h2>ProDashboard</h2>
+        <h1>ProDashboard</h1>
       </div>
 
       <button
