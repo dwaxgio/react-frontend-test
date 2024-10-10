@@ -32,7 +32,7 @@ const Login = () => {
       >
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label style={{ textAlign: 'left', display: 'block' }}>Email</label>
+            <label style={{ textAlign: "left", display: "block" }}>Email</label>
             <input
               type="email"
               className="form-control"
@@ -42,7 +42,9 @@ const Login = () => {
             />
           </div>
           <div className="mb-3">
-            <label style={{ textAlign: 'left', display: 'block' }}>Password</label>
+            <label style={{ textAlign: "left", display: "block" }}>
+              Password
+            </label>
             <div className="input-group">
               <input
                 type={showPassword ? "text" : "password"}
