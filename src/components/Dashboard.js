@@ -38,7 +38,7 @@ const Dashboard = () => {
 
       <button
         className="btn btn-danger position-absolute"
-        style={{ top: 5, right: 5 }}
+        style={{ top: 20, right: 20 }}
         onClick={handleLogout}
       >
         Logout
