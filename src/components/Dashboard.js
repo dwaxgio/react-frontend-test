@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [comments, setComments] = useState([]);
   const [selectedComment, setSelectedComment] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -23,9 +25,25 @@ const Dashboard = () => {
     setSelectedComment(null);
   };
 
+  const handleLogout = () => {
+    sessionStorage.removeItem("loggedIn");
+    navigate("/login");
+  };
+
   return (
-    <div className="container">
-      <h2>Dashboard</h2>
+    <div className="container position-relative">
+      <div className="text-center">
+        <h2>ProDashboard</h2>
+      </div>
+
+      <button
+        className="btn btn-danger position-absolute"
+        style={{ top: 5, right: 5 }}
+        onClick={handleLogout}
+      >
+        Logout
+      </button>
+
       <div style={{ maxHeight: "800px", overflowY: "scroll" }}>
         {comments.map((comment) => (
           <div key={comment.id} className="card mb-2">

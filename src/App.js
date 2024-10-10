@@ -10,13 +10,6 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route path="/login" element={<Login />} />
-    //     <Route path="/dashboard" element={<Dashboard />} />
-    //     <Route path="*" element={<Navigate to="/login" />} />
-    //   </Routes>
-    // </Router>
     <div className="App">
       <header className="App-header">
         {/*  */}
