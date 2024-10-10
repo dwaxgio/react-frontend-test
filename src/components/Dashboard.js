@@ -50,16 +50,15 @@ const Dashboard = () => {
             <div className="card-body d-flex justify-content-between align-items-center">
               <div className="text-center flex-grow-1">
                 <span className="card-text mx-2">{comment.id}</span>
-                <srong>|</srong>
+                <strong>|</strong>
                 <span className="card-text mx-2">{comment.name}</span>
-                <srong>|</srong>
+                <strong>|</strong>
                 <span className="card-text mx-2">{comment.email}</span>
               </div>
 
-              <button
-                className="btn btn-primary fas fa-eye"
-                onClick={() => handleShowModal(comment)}
-              ></button>
+              <button className="btn " onClick={() => handleShowModal(comment)}>
+                <i className="fas fa-eye"></i>
+              </button>
             </div>
           </div>
         ))}
