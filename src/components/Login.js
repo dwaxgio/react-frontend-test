@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -63,9 +63,11 @@ const Login = () => {
           </div>
         </div>
         {error && <div className="alert alert-danger">{error}</div>}
-        <button type="submit" className="btn btn-primary">
-          Login
-        </button>
+        <div className="text-end">
+          <button type="submit" className="btn btn-primary btn-lg">
+            Login
+          </button>
+        </div>
       </form>
     </div>
   );

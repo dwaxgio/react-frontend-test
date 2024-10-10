@@ -72,7 +72,7 @@ const Dashboard = () => {
               <div className="modal-header">
                 <button
                   type="button"
-                  className="btn btn-secondary ms-auto" // Clase para alinear a la derecha
+                  className="btn btn-secondary ms-auto"
                   onClick={handleCloseModal}
                 >
                   Close
