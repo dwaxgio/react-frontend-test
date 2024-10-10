@@ -24,7 +24,10 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div
+      className="container p-5"
+      style={{ backgroundColor: "#32343B", borderRadius: "15px" }}
+    >
       <h2>ProLogin</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">

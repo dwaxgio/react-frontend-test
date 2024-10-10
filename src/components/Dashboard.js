@@ -31,7 +31,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="container position-relative">
+    <div className="container position-relative p-4">
       <div className="text-center">
         <h2>ProDashboard</h2>
       </div>
@@ -44,7 +44,7 @@ const Dashboard = () => {
         Logout
       </button>
 
-      <div style={{ maxHeight: "800px", overflowY: "scroll" }}>
+      <div style={{ maxHeight: "800px", overflowY: "scroll", padding: "15px" }}>
         {comments.map((comment) => (
           <div key={comment.id} className="card mb-2">
             <div className="card-body d-flex justify-content-between align-items-center">
