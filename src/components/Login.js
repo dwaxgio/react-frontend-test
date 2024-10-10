@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -15,6 +17,10 @@ const Login = () => {
     } else {
       setError("Invalid email or password");
     }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -33,15 +39,28 @@ const Login = () => {
         </div>
         <div className="mb-3">
           <label>Password</label>
-          <input
-            type="password"
-            className="form-control"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            minLength={6}
-            pattern="(?=.*\d)(?=.*[a-zA-Z]).{6,}"
-          />
+          <div className="input-group">
+            <input
+              type={showPassword ? "text" : "password"}
+              className="form-control"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              minLength={6}
+              pattern="(?=.*\d)(?=.*[a-zA-Z]).{6,}"
+            />
+            <button
+              type="button"
+              className="btn btn-outline-secondary"
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? (
+                <i className="fas fa-eye-slash" style={{ color: "white" }}></i>
+              ) : (
+                <i className="fas fa-eye" style={{ color: "white" }}></i>
+              )}
+            </button>
+          </div>
         </div>
         {error && <div className="alert alert-danger">{error}</div>}
         <button type="submit" className="btn btn-primary">
