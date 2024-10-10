@@ -47,15 +47,19 @@ const Dashboard = () => {
       <div style={{ maxHeight: "800px", overflowY: "scroll" }}>
         {comments.map((comment) => (
           <div key={comment.id} className="card mb-2">
-            <div className="card-body">
-              <h5 className="card-title">{comment.name}</h5>
-              <p className="card-text">{comment.body}</p>
+            <div className="card-body d-flex justify-content-between align-items-center">
+              <div className="text-center flex-grow-1">
+                <span className="card-text mx-2">{comment.id}</span>
+                <srong>|</srong>
+                <span className="card-text mx-2">{comment.name}</span>
+                <srong>|</srong>
+                <span className="card-text mx-2">{comment.email}</span>
+              </div>
+
               <button
-                className="btn btn-primary"
+                className="btn btn-primary fas fa-eye"
                 onClick={() => handleShowModal(comment)}
-              >
-                View
-              </button>
+              ></button>
             </div>
           </div>
         ))}
@@ -66,7 +70,13 @@ const Dashboard = () => {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title text-dark">Comment Details</h5>
+                <button
+                  type="button"
+                  className="btn btn-secondary ms-auto" // Clase para alinear a la derecha
+                  onClick={handleCloseModal}
+                >
+                  Close
+                </button>
               </div>
               <div className="modal-body text-dark">
                 {selectedComment && (
@@ -85,15 +95,6 @@ const Dashboard = () => {
                     </p>
                   </>
                 )}
-              </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  onClick={handleCloseModal}
-                >
-                  Close
-                </button>
               </div>
             </div>
           </div>
